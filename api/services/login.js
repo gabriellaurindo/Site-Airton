@@ -1,13 +1,10 @@
-//Importando Módulos
-const express = require('express')
-const router = express.Router()
 const bcrypt = require("bcrypt")
-const usuario = require("../api/models/User")
+const usuario = require("../models/User")
 const jwt = require('jsonwebtoken')
-const EnvConfig = require ('../config/env.json')
+const EnvConfig = require ('../../config/env.json')
 
-//Rota para verificação
-router.post('/auth', function (req, res,) {
+
+function  login (req,res){
     const {email, senha} = req.body
     usuario.findOne({email}).then(user =>{
         if(user){
@@ -22,16 +19,15 @@ router.post('/auth', function (req, res,) {
                 }else{
                     res.statusCode = 401
                     res.send({Acesso:"Negado"})
-                   
                 }
             })    
         }else{
             
         }
         
-    }) 
-})
-  
-
-
-module.exports = router
+    }).catch(function(motivo){
+        console.clear
+        console.log(motivo)
+     })
+}
+module.exports = login

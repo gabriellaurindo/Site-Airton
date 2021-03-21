@@ -9,13 +9,13 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 //Importar Rotas
-const index =          require('../routes/index');
-const auth =          require('../routes/auth')
+const index =          require('../routes/index')
+const login =          require('../routes/login')
 const photos =         require('../routes/photos')
 
 //Usar Rotas
 app.use('/',index)
-app.use('/',auth)
+app.use('/',login)
 app.use('/',photos)
 
 
