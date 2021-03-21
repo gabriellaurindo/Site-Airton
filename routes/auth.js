@@ -13,7 +13,7 @@ router.post('/auth', function (req, res,) {
         if(user){
             bcrypt.compare(senha, user.senha, (err, success)=>{
                 if(success){
-                    user.senha = null
+                    user.senha = undefined
                     res.statusCode = 200
                     const token = jwt.sign({id : user.id}, EnvConfig.secret, {
                         expiresIn : 86400
