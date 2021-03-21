@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt")
 const usuario = require("../models/User")
 const jwt = require('jsonwebtoken')
-const EnvConfig = require ('../../config/env.json')
+const EnvConfig = require ('../../config/vars/env')
 
 
 function  login (req,res){

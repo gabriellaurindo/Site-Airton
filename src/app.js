@@ -3,8 +3,6 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
-
-
 //Config body parser
 app.use(bodyParser.json())
 
@@ -18,5 +16,7 @@ app.use('/',index)
 app.use('/',login)
 app.use('/',photos)
 
+//Importando Banco
+require("../config/database")
 
 module.exports = app
