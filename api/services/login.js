@@ -11,10 +11,11 @@ function  login (req,res){
             bcrypt.compare(senha, user.senha, (err, success)=>{
                 if(success){
                     user.senha = undefined
-                    res.statusCode = 200
+                    user.eAdmin= undefined
                     const token = jwt.sign({id : user.id}, EnvConfig.secret, {
                         expiresIn : 86400
                     })
+                    res.statusCode = 200
                     res.send({Acesso:"Autorizado", user, token})
                 }else{
                     res.statusCode = 401
