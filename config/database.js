@@ -1,8 +1,7 @@
 //Importando módulos
-const app = require("./app")
 const mongoose = require("mongoose")
 
-//Cofig banco mongoose
+//Config banco mongoose
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/site-airton', {
     useNewUrlParser: true , 
@@ -13,6 +12,3 @@ mongoose.connect('mongodb://localhost/site-airton', {
     console.log("Houve um erro: " + err);
 });
 
-
-//Subir Servidor
-app.listen(3000)
