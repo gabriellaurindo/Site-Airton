@@ -1,7 +1,6 @@
 //Importando Módulos
 const mongoose = require('mongoose')
 
-
 //Definindo Schema
 const Schema = mongoose.Schema
 
@@ -25,7 +24,6 @@ const userSchema = new Schema({
         
     }
 })
-
 
 //Definindo modelo de usuário baseado no Schema
 const user = mongoose.model("usuario", userSchema)

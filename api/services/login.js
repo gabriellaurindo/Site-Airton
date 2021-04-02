@@ -1,9 +1,10 @@
+//Importando Módulos
 const bcrypt = require("bcrypt")
 const usuario = require("../models/User")
 const jwt = require('jsonwebtoken')
 const EnvConfig = require ('../../config/vars/env')
 
-
+//Função de login
 function  login (req,res){
     const {email, senha} = req.body
     usuario.findOne({email}).then(user =>{
@@ -31,4 +32,6 @@ function  login (req,res){
         console.log(motivo)
      })
 }
+
+//Exportando Módulo
 module.exports = login

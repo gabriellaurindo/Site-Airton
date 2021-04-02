@@ -10,13 +10,13 @@ app.use(bodyParser.json())
 const index =          require('../routes/index')
 const login =          require('../routes/login')
 const photos =         require('../routes/photos')
-const photo =          require('../routes/photo')
+
 
 //Usar Rotas
 app.use('/',index)
 app.use('/',login)
 app.use('/',photos)
-app.use('/',photo)
+
 
 //Importando Banco
 require("../config/database")
